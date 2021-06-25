@@ -24,12 +24,12 @@ func main() {
 	seconds := time.Now().Unix()
 	rand.Seed(seconds)
 	target := rand.Intn(100) + 5
-	fmt.Println("I've chosen a random number between 1 and 100.")
-	fmt.Println("Can you guess it?")
+	fmt.Println("Game is not name. Угадай число между 1 и 100.")
+//	fmt.Println("Can you guess it?")
 	fmt.Println(target)
 
 		reader := bufio.NewReader (os.Stdin) // блок для ввода чисел и проверки
-
+		success := false
 		for guesses := 0; guesses < 10; guesses++ {
 			fmt.Println("У тебя есть", 10-guesses , "попыток.")
 
@@ -49,8 +49,12 @@ func main() {
 			} else if guess > target {
 				fmt.Println("Oops. Ты ввел большое число.")
 			} else {
-				fmt.Println("Good job! Ты угадал!")
+				success = true
+				fmt.Println("Ура! Ты угадал!")
 				break
 		}
+	}
+	if !success {
+		fmt.Println("Сорян, ты лузер и ты не угадал. :", target)
 	}
 }
