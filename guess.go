@@ -34,7 +34,7 @@ func main() {
 			fmt.Println("У тебя есть", 10-guesses , "попыток.")
 
 			fmt.Print("Введите число:")
-			input, err := reader.ReadString('/n')
+			input, err := reader.ReadString('\n')
 			if err != nil {
 				log.Fatal(err)
 			}
