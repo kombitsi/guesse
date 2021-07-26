@@ -26,7 +26,7 @@ func main() {
 	target := rand.Intn(100) + 5
 	fmt.Println("Game is not name. Угадай число между 1 и 100.")
 //	fmt.Println("Can you guess it?")
-	fmt.Println(target)
+//	fmt.Println(target)
 
 		reader := bufio.NewReader (os.Stdin) // блок для ввода чисел и проверки
 		success := false
